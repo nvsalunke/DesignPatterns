@@ -25,11 +25,14 @@ namespace Creational.Singleton
         {
             get
             {
-                lock (obj)
-                {
-                    if (_instance == null)
+                 if (_instance == null)
+                 {
+                    lock (obj)
                     {
-                        _instance = new ThreadSafeSingleton();
+                        if (_instance == null)
+                        {
+                            _instance = new ThreadSafeSingleton();
+                        }
                     }
                 }
                 return _instance;
