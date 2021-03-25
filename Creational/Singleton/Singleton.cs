@@ -2,6 +2,7 @@
 
 namespace Creational.Singleton
 {
+    //Eager singleton
     public sealed class SimpleSingleton
     {
         private SimpleSingleton()
@@ -11,6 +12,8 @@ namespace Creational.Singleton
         public static readonly SimpleSingleton Instance = new SimpleSingleton();
 
     }
+
+    //Lazy threadsafe singleton 
     public sealed class ThreadSafeSingleton
     {
         private ThreadSafeSingleton()
@@ -39,7 +42,7 @@ namespace Creational.Singleton
             }
         }
     }
-
+    //Lazy singleton using Lazy<T>
     public sealed class LazySingleton
     {
         private LazySingleton()
